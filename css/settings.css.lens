@@ -70,6 +70,12 @@ p a:hover {
     height: inherit;
 }
 
+@media only screen and (max-width : 410px) {
+    h1#sitename {
+        padding-right: 48px;
+    }
+}
+
 #sidebar {
 	overflow-x:hidden;
 }
