@@ -1,8 +1,8 @@
 @import url(https://fonts.googleapis.com/css?family=Open+Sans:400,800,700,300);
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300);
-html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, 
-pre, a, abbr, acronym, address, big, cite, code, del, dfn, font, img, ins, kbd, q, s, 
-samp, small, strike, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label, 
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
+pre, a, abbr, acronym, address, big, cite, code, del, dfn, font, img, ins, kbd, q, s,
+samp, small, strike, sub, sup, tt, var, dd, dl, dt, li, ol, ul, fieldset, form, label,
 legend, table, caption, tbody, tfoot, thead, tr, th, td, a, figure {
 	margin: 0;
 	padding: 0;
@@ -66,6 +66,8 @@ p a:hover {
 	z-index:999;
 	margin:20px;
 	text-align:center;
+	min-height: 48px;
+    height: inherit;
 }
 
 #sidebar {
@@ -281,7 +283,7 @@ main {
     margin:0 auto;
     max-height:596px;
 }
- 
+
 .grid li {
     position: relative;
     float: left;
@@ -290,14 +292,14 @@ main {
     width: -webkit-calc(100% / 3);
     max-width: calc(100% / 3);
 }
- 
+
 .grid li a,
 .grid li a img {
     display: block;
     width: 100%;
     cursor: pointer;
 }
- 
+
 .grid li a img {
     max-width: 100%;
     z-index:4;
@@ -306,8 +308,10 @@ main {
 	-webkit-transition:1s all ease;
 }
 
-.k-lens-album .grid li a img:hover, 
-.k-lens-contents .grid li a img:hover, 
+.k-lens-contents .grid li a:hover img,
+.k-lens-set .grid li a:hover img,
+.k-lens-album .grid li a img:hover,
+.k-lens-contents .grid li a img:hover,
 .k-lens-favorites .grid li a img:hover {
 	z-index:7;
 	transform:scale(1.05,1.05);
@@ -315,7 +319,7 @@ main {
 	transition:1s all ease;
 	-webkit-transition:1s all ease;
 }
- 
+
 .grid li a div {
     position: absolute;
     left: 0;
@@ -338,18 +342,18 @@ main {
     z-index:5;
 }
 .grid li a div:hover {
-    opacity:1;
-    transition: all .2s ease-out;
-    -webkit-transition: all .2s ease-out;
+    opacity:.8;
+    transition: all 1s ease-out;
+    -webkit-transition: all 1s ease-out;
+    z-index:8;
 }
 
 .grid li a div p, .grid li a div h3, .grid li a div h4 {
     color: #fff;
     padding: 40px;
 }
- 
+
 .grid li a div h3 {
-    font-size:1.4em;
     font-weight:bold;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -357,6 +361,8 @@ main {
     display:block;
     height:50px;
     margin:0 auto;
+    font-size: 2.3vw;
+    text-align: center;
 }
 
 .grid li a div p {
@@ -381,42 +387,42 @@ main {
 	background:#fff;
 }
 
-.k-lens-index .show, 
-.k-lens-albums .show, 
-.k-lens-contents .show, 
+.k-lens-index .show,
+.k-lens-albums .show,
+.k-lens-contents .show,
 .k-lens-sets .show {
 	border-color:#f0f0f0;
 	background:#fff;
 	color:#000;
 }
 
-.k-lens-index .show:hover, .k-lens-albums .show:hover, 
+.k-lens-index .show:hover, .k-lens-albums .show:hover,
 .k-lens-contents .show:hover, .k-lens-sets .show:hover {
 	background:#000;
 	color:#fff;
 	border-color:#333;
 }
 
-.k-lens-index nav a, .k-lens-albums nav a, 
-.k-lens-contents nav a, 
+.k-lens-index nav a, .k-lens-albums nav a,
+.k-lens-contents nav a,
 .k-lens-sets nav a {
 	background:#fff;
 	color:#000;
 	border-color:#f0f0f0;
 }
 
-.k-lens-index nav a:hover, 
-.k-lens-albums nav a:hover, 
-.k-lens-contents nav a:hover, 
+.k-lens-index nav a:hover,
+.k-lens-albums nav a:hover,
+.k-lens-contents nav a:hover,
 .k-lens-sets nav a:hover {
 	background:#000;
 	color:#fff;
 	border-color:#333;
 }
 
-.k-lens-index nav .k-nav-current, 
-.k-lens-albums nav .k-nav-current, 
-.k-lens-contents nav .k-nav-current, 
+.k-lens-index nav .k-nav-current,
+.k-lens-albums nav .k-nav-current,
+.k-lens-contents nav .k-nav-current,
 .k-lens-sets nav .k-nav-current {
 	background:#000;
 	color:#fff;
@@ -434,7 +440,7 @@ main {
 	padding:20px;
 }
 
-.sldshw-arrow-left, 
+.sldshw-arrow-left,
 .sldshw-arrow-right {
 	background:#fff;
 	color:#000;
@@ -451,7 +457,7 @@ main {
 	border-right:1px solid #ddd;
 }
 
-.sldshw-arrow-left:hover, 
+.sldshw-arrow-left:hover,
 .sldshw-arrow-right:hover {
 	background:#000;
 	border:none;
@@ -563,23 +569,23 @@ footer {
 	margin:0 auto;
 }
 
-.k-lens-essay .page-content, 
+.k-lens-essay .page-content,
 .k-lens-tags .page-content,
 .k-lens-page .page-content {
 	padding-top:0;
 }
 
-.k-lens-page .page-content p, 
+.k-lens-page .page-content p,
 .k-lens-page .page-content h1 {
 	max-width:750px;
 	margin:0 auto;
 	padding:0 20px 0 20px;
 }
 
-.entry h1, 
-.album-name, 
-.exif h1, 
-.page-name, 
+.entry h1,
+.album-name,
+.exif h1,
+.page-name,
 .list h3 {
 	font-size:2.5em;
 	text-transform:uppercase;
@@ -590,14 +596,14 @@ footer {
 	line-height:1.5em;
 }
 
-.k-lens-essays h1, 
-.k-lens-essay h1, 
+.k-lens-essays h1,
+.k-lens-essay h1,
 .list h1 {
 	text-transform:capitalize;
 	letter-spacing:0;
 }
 
-.entry time, .time, 
+.entry time, .time,
 .essay-time, time {
 	font-weight:600;
 	text-transform:uppercase;
@@ -612,7 +618,7 @@ footer {
 	margin:70px 0 70px 0;
 }
 
-.k-content-text .k-content-title, 
+.k-content-text .k-content-title,
 .entry .k-content-text .k-content-caption {
 	clear:both;
 	width:100%;
@@ -625,7 +631,7 @@ footer {
 	padding-top:10px;
 }
 
-.k-lens-album .time, 
+.k-lens-album .time,
 .k-lens-set .time {
 	padding-bottom:10px;
 	text-align:center;
@@ -640,10 +646,10 @@ footer {
 	border-bottom:2px solid #ccc;
 }
 
-.album-desc, 
-.entry p, 
-.main-p, 
-.exif p, 
+.album-desc,
+.entry p,
+.main-p,
+.exif p,
 .list p,
 form label {
 	line-height:1.7em;
@@ -856,15 +862,15 @@ form button:hover {
 
 @media screen and (max-width: 1190px) {
     .grid li {
-        width: 33.33333333%; 
+        width: 33.33333333%;
         width: -webkit-calc(100% / 3);
         width: calc(100% / 3);
     }
 }
- 
+
 @media screen and (max-width: 945px) {
     .grid li {
-        width: 50%; 
+        width: 50%;
         width: -webkit-calc(100% / 2);
         width: calc(100% / 2);
     }
@@ -896,15 +902,15 @@ form button:hover {
     	z-index:99;
     }
 }
- 
+
 @media screen and (max-width: 540px) {
     .grid li {
-        width: 100%; 
+        width: 100%;
     }
 }
 
 @media screen and (max-width: 720px) {
-	.entry p, .album-desc, .essay-content, .main-p, 
+	.entry p, .album-desc, .essay-content, .main-p,
 	.exif p, .entry time, .time, .essay-time {
 		font-size:1.1em;
 	}
@@ -912,7 +918,7 @@ form button:hover {
 	.entry h2, .album-name, .essay-title, .exif h1 {
 		font-size:2em;
 	}
-	
+
 }
 
 @-webkit-keyframes offset {

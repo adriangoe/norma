@@ -1,7 +1,7 @@
 <koken:include file="inc/components/header.html" />
 <main role="main">
 <koken:load>
-	<article class="top-section">
+  <article class="top-section">
     <p class="time"><koken:time />
       <koken:categories>
       <span class="categories"> /  In
@@ -14,7 +14,7 @@
     </koken:categories>
 
     <koken:tags>
-    <span class="tags">Tagged 
+    <span class="tags">Tagged
       <koken:loop separator=", ">
         <koken:link>
           {{ tag.title }}
@@ -23,9 +23,13 @@
       </span>
     </koken:tags>
     </p>
-	  <p class="album-name">{{ album.title }} </p> 
-	  <p class="album-desc"> {{ album.description }} </p>
-	 </article>
+    <p class="album-name">{{ album.title }} </p>
+    <p class="album-desc"> {{ album.description }}
+        <koken:album_download>
+              <koken:link>Download Full Album</koken:link>
+          </koken:album_download>
+       </p>
+   </article>
   <ul class="grid">
     <koken:loop>
       <li>
@@ -38,7 +42,7 @@
   <koken:include file="inc/components/share.html" />
 <koken:else>
   <koken:note>
-    No album data found 
+    No album data found
   </koken:note>
 </koken:load>
 </main>

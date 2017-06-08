@@ -4,8 +4,11 @@
       <ol class="grid">
         <koken:loop>
           <li>
-            <koken:link>
-              <koken:img crop="true"/>
+            <koken:link lightbox="true">
+              <koken:img crop="adaptive"/>
+              <div>
+                <h3>{{ caption }} </h3>
+              </div>
             </koken:link>
           </li>
         </koken:loop>

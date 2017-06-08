@@ -13,7 +13,7 @@
       </span>
     </koken:categories>
     <koken:tags>
-    <span class="tags"> /  Tagged 
+    <span class="tags"> /  Tagged
       <koken:loop separator=", ">
         <koken:link>
           {{ tag.title }}
@@ -22,7 +22,7 @@
       </span>
     </koken:tags>
     </p>
-    <p class="album-name">{{ album.title }} </p> 
+    <p class="album-name">{{ album.title }} </p>
     <p class="album-desc">{{ album.description }} </p>
    </article>
     <ul class="grid">
@@ -32,7 +32,6 @@
               <koken:img crop="adaptive" />
               <div>
                 <h3>{{ album.title }} </h3>
-                <p>{{ album.description }} </p>
               </div>
           </koken:link>
         </li>
@@ -41,7 +40,7 @@
     <koken:include file="inc/components/share.html" />
   <koken:else>
     <koken:note>
-      No public albums found 
+      No public albums found
     </koken:note>
     </div>
   </koken:load>
