@@ -34,7 +34,6 @@
     <koken:loop>
       <li>
         <koken:link lightbox="true">
-          <koken:img crop="adaptive"/>
           <koken:img size="1:1" alt="{{ caption }}"/>
             <div class="item-caption" style="display: none">
               <koken:time />
