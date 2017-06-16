@@ -177,7 +177,7 @@ p a:hover {
 
 #regular .menu {
 	position:fixed;
-	z-index:9999;
+	z-index:1000;
 	margin:20px;
 	right:0;
 }

@@ -5,7 +5,28 @@
         <koken:loop>
           <li>
             <koken:link lightbox="true">
-              <koken:img crop="adaptive"/>
+              <koken:img size="1:1" alt="{{ caption }}"/>
+              <div class="item-caption" style="display: none">
+                <koken:time />
+                |
+                <koken:exif>
+                  <koken:not empty="exif.model">
+                    {{ exif.model }},
+                  </koken:not>
+                  <koken:not empty="exif.exposure">
+                     {{ exif.exposure }},
+                  </koken:not>
+                  <koken:not empty="exif.aperture">
+                    {{ exif.aperture }},
+                  </koken:not>
+                  <koken:not empty="exif.focal_length">
+                    {{ exif.focal_length }},
+                  </koken:not>
+                  <koken:not empty="exif.iso_speed_ratings">
+                    {{ exif.iso_speed_ratings }}
+                  </koken:not>
+                </koken:exif>
+              </div>
               <div>
                 <h3>{{ caption }} </h3>
               </div>
