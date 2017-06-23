@@ -2,13 +2,22 @@
 <main role="main">
 <div class="page-content">
 <koken:load>
+  <p class="album-name">Timeline</p>
+
   <ol class="list">
+    <div class="timeline-divider"></div>
+
     <koken:loop>
       <li>
         <koken:event>
-          <koken:event_album>           
-            <koken:link>
+          <koken:event_album>
+            <koken:link lightbox="true">
               <koken:img />
+              <div class="item-caption" style="display: none">
+                <koken:time />
+                |
+                <span class="psw-link" value="{{ title }}">GO TO FULL ALBUM</span>
+              </div>
             </koken:link>
             <h2 class="timeline-time">
           <koken:link><koken:time /></koken:link>
@@ -17,24 +26,68 @@
               <koken:link>
                 {{ album.title }}
               </koken:link>
-            </h3> 
+            </h3>
             <p>
               {{ album.summary }}
             </p>
           </koken:event_album>
           <koken:event_album_update>
             <koken:loop>
-              <koken:img />
+              <koken:link lightbox="true">
+                <koken:img alt="{{ caption }}"/>
+                    <div class="item-caption" style="display: none">
+                      <koken:time />
+                      |
+                      <koken:exif>
+                        <koken:not empty="exif.model">
+                          {{ exif.model }},
+                        </koken:not>
+                        <koken:not empty="exif.exposure">
+                           {{ exif.exposure }},
+                        </koken:not>
+                        <koken:not empty="exif.aperture">
+                          {{ exif.aperture }},
+                        </koken:not>
+                        <koken:not empty="exif.focal_length">
+                          {{ exif.focal_length }},
+                        </koken:not>
+                        <koken:not empty="exif.iso_speed_ratings">
+                          {{ exif.iso_speed_ratings }}
+                        </koken:not>
+                    </koken:exif>
+                  </div>
+              </koken:link>
             </koken:loop>
-            <h3>{{ album.title }} ({{ content.length }} new items)</h3> 
+            <h3>Added {{ content.length }} pics to {{ album.title }}</h3>
             <p>
               {{ album.summary }}
             </p>
           </koken:event_album_update>
           <koken:event_content>
             <koken:content_image>
-              <koken:link>
-                <koken:img />
+              <koken:link lightbox="true">
+                <koken:img alt={{ caption }}/>
+                    <div class="item-caption" style="display: none">
+                      <koken:time />
+                      |
+                      <koken:exif>
+                        <koken:not empty="exif.model">
+                          {{ exif.model }},
+                        </koken:not>
+                        <koken:not empty="exif.exposure">
+                           {{ exif.exposure }},
+                        </koken:not>
+                        <koken:not empty="exif.aperture">
+                          {{ exif.aperture }},
+                        </koken:not>
+                        <koken:not empty="exif.focal_length">
+                          {{ exif.focal_length }},
+                        </koken:not>
+                        <koken:not empty="exif.iso_speed_ratings">
+                          {{ exif.iso_speed_ratings }}
+                        </koken:not>
+                    </koken:exif>
+                  </div>
               </koken:link>
             </koken:content_image>
             <koken:content_video>
@@ -44,9 +97,9 @@
               <koken:link>
                 {{ content.title | content.filename }}
               </koken:link>
-            </p> 
+            </p>
             <p>
-              {{ content.caption }} 
+              {{ content.caption }}
             </p>
           </koken:event_content>
           <koken:event_essay>
@@ -59,7 +112,7 @@
               <koken:link>
                 {{ essay.title }}
               </koken:link>
-            </h3> 
+            </h3>
             <p>
               {{ essay.excerpt }}
             </p>
@@ -67,15 +120,30 @@
         </koken:event>
         <div class="timeline-divider"></div>
       </li>
-      
+
     </koken:loop>
   </ol>
 <koken:else>
   <koken:note>
-    No timeline data found. 
+    No timeline data found.
   </koken:note>
 </koken:load>
 </div>
 </main>
 </body>
+<script>
+
+function checkAlbumLink()
+{
+    $('small .psw-link').replaceWith(function() {
+        var url = $.trim($(this).attr('value'));
+        return '<a href="/albums/' + url + '" target="_blank">' + $(this).text() + '</a>';
+    });
+
+    // call the function again after 100 milliseconds
+    setTimeout( checkAlbumLink, 200 );
+}
+
+checkAlbumLink();
+</script>
 </html>
