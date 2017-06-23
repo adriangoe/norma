@@ -137,7 +137,7 @@ function checkAlbumLink()
 {
     $('small .psw-link').replaceWith(function() {
         var url = $.trim($(this).attr('value'));
-        return '<a href="/albums/' + url + '" target="_blank">' + $(this).text() + '</a>';
+        return '<a href="/albums/' + url + '">' + $(this).text() + '</a>';
     });
 
     // call the function again after 100 milliseconds
