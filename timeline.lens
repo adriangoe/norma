@@ -58,7 +58,7 @@
                   </div>
               </koken:link>
             </koken:loop>
-            <h3>Added {{ content.length }} pics to {{ album.title }}</h3>
+            <h3>Added {{ content.length }} pics to <koken:link>{{ album.title }}</koken:link></h3>
             <p>
               {{ album.summary }}
             </p>
