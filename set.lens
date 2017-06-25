@@ -2,7 +2,7 @@
 <main role="main">
   <koken:load>
     <article class="top-section">
-    <p class="time"><koken:time />
+<!--     <p class="time"><koken:time />
       <koken:categories>
       <span class="categories"> /  In
       <koken:loop separator=", ">
@@ -21,7 +21,7 @@
       </koken:loop>
       </span>
     </koken:tags>
-    </p>
+    </p> -->
     <p class="album-name">{{ album.title }} </p>
     <p class="album-desc">{{ album.description }} </p>
    </article>
