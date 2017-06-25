@@ -102,6 +102,10 @@ p a:hover {
 	display:none;
 }
 
+#regular nav li a.nav_show {
+    display:inline-block;
+}
+
 #regular .k-lens-index nav a {
 	display:inline-block;
 }

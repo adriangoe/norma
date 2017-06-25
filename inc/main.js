@@ -7,7 +7,7 @@ $(document).ready(function() {
     });
 
     $('.show').click(function() {
-        $('nav li a').not('.k-nav-current').toggle();
+        $('nav li a').not('.k-nav-current').toggleClass('nav_show');
         $('.show').toggleClass('show-toggled');
         return false
     });
