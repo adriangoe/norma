@@ -55,6 +55,9 @@
                   {{ exif.iso_speed_ratings }}
                 </koken:not>
             </koken:exif>
+            <koken:max_download>
+                <span class="psw-link" value="DOWNLOAD">{{ max_download.link }}</span>
+            </koken:max_download>
           </div>
         </koken:link>
       </li>
@@ -68,4 +71,19 @@
 </koken:load>
 </main>
 </body>
+<script>
+
+function checkAlbumLink()
+{
+    $('small .psw-link').replaceWith(function() {
+        var text = $.trim($(this).attr('value'));
+        return '<a href="' + $(this).text() + '">' + text + '</a>';
+    });
+
+    // call the function again after 100 milliseconds
+    setTimeout( checkAlbumLink, 200 );
+}
+
+checkAlbumLink();
+</script>
 </html>

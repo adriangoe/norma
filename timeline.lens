@@ -16,7 +16,7 @@
               <div class="item-caption" style="display: none">
                 <koken:time />
                 |
-                <span class="psw-link" value="{{ title }}">GO TO FULL ALBUM</span>
+                <span class="psw-link" value="GO TO FULL ALBUM"><koken:permalink /></span>
               </div>
             </koken:link>
             <h2 class="timeline-time">
@@ -136,8 +136,8 @@
 function checkAlbumLink()
 {
     $('small .psw-link').replaceWith(function() {
-        var url = $.trim($(this).attr('value'));
-        return '<a href="/albums/' + url + '">' + $(this).text() + '</a>';
+        var text = $.trim($(this).attr('value'));
+        return '<a href="' + $(this).text() + '">' + text + '</a>';
     });
 
     // call the function again after 100 milliseconds
